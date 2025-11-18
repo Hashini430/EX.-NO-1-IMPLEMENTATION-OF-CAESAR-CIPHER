@@ -16,8 +16,36 @@ STEP-4: Else subtract the key from the plain text.
 STEP-5: Display the cipher text obtained above.
 
 ## PROGRAM:
+```#A python program to illustrate Caesar Cipher Technique
+def encrypt(text,s):
+	result = ""
+
+	# traverse text
+	for i in range(len(text)):
+		char = text[i]
+
+		# Encrypt uppercase characters
+		if (char.isupper()):
+			result += chr((ord(char) + s-65) % 26 + 65)
+
+		# Encrypt lowercase characters
+		else:
+			result += chr((ord(char) + s - 97) % 26 + 97)
+
+	return result
+
+#check the above function
+text = "ATTACKATONCE"
+s = 4
+print ("Text : " + text)
+print ("Shift : " + str(s))
+print ("Cipher: " + encrypt(text,s))
+
+```
+
 
 ## OUTPUT:
+<img width="1065" height="210" alt="image" src="https://github.com/user-attachments/assets/9231c77d-7efd-4dc8-a52b-81bd695674f8" />
 
 ## RESULT :
  Thus the implementation of ceasar cipher had been executed successfully.
